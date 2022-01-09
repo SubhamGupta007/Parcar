@@ -1,8 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../../Css/header.css'
 import Logo from "../../images/logo.png"
+import GoogleLogin from 'react-google-login';
+// import { useState } from 'react';
 
-const Header = () => {
+const Header = (props) => {
+    const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+    const [userGoogleData, setUserGoogleData] = useState();
+    const responseGoogle = (response) => {
+        console.log(response);
+      }
+    const responseSuccessGoogle=(response)=>{
+        setUserGoogleData(response);
+        setIsUserLoggedIn(true);
+        console.log(response);
+        console.log('henlo google');
+        props.handleLoggedIn(response);
+    }
+
     return (
         <>
           <nav className="navbar navbar-expand-lg navbar-red navbar-dark">
@@ -15,6 +30,14 @@ const Header = () => {
                 <li className="nav-item"> <a className="nav-link" href="#">Services</a> </li>
                 <li className="nav-item"> <a className="nav-link" href="#">BUY/REGISTER</a> </li>
                 <li className="nav-item"> <a className="nav-link" href="#">contact</a> </li>
+                <GoogleLogin
+                    clientId="236369793444-bbohip2g0qlv07lg6589prfsa11hjcsc.apps.googleusercontent.com"
+                    buttonText="Login"
+                    onSuccess={responseSuccessGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                />
                
             </ul>
             <div className="d-flex flex-column sim"> <span>Login</span> <small className="text-primary">if already registered</small> </div>
