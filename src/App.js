@@ -13,8 +13,12 @@ function App() {
     setUserGoogleData(response);
     setIsUserLoggedIn(true);
   }
+  let handleLoggedOut=(response)=>{
+    console.log(response);
+    setIsUserLoggedIn(false);
+  }
   if(isUserLoggedIn){
-    return <UserHome/>
+    return <UserHome handleLoggedOut={handleLoggedOut}/>
   }
   else{
    return (
