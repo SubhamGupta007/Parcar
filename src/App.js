@@ -26,6 +26,7 @@ function App() {
       <div className="App">
       <Header handleLoggedIn={handleLoggedIn}/>
       <Banner/>
+      <Form/>
       <Footer/>
       </div>
     );
