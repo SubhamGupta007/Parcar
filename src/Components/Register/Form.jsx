@@ -19,12 +19,12 @@ const Form = () => {
   };
 
   const [initialState, setState] = useState(values);
-  const [data, setData] = useState({
-    // fname:"",
-    // lname:"",
-    // email:"",
-    // phone:"",
-  });
+  // const [data, setData] = useState({
+  //   // fname:"",
+  //   // lname:"",
+  //   // email:"",
+  //   // phone:"",
+  // });
 
   const {
     name,
