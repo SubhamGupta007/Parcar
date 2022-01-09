@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Header from './Components/Home/Header';
 import Footer from './Components/Home/Footer';
 import Banner from './Components/Home/Banner';
-// import Form from './Components/Register/Form';
+ import Form from './Components/Register/Form';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import UserHome from './Components/UserHome/UserHome'
 function App() {
@@ -27,6 +27,7 @@ function App() {
       <div className="App">
       <Header handleLoggedIn={handleLoggedIn}/>
       <Banner/>
+      <Form/>
       <Footer/>
       </div>
     );
