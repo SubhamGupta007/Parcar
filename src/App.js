@@ -16,6 +16,7 @@ function App() {
   let handleLoggedOut=(response)=>{
     console.log(response);
     setIsUserLoggedIn(false);
+    window.location.reload(true);
   }
   if(isUserLoggedIn){
     return <UserHome handleLoggedOut={handleLoggedOut}/>
