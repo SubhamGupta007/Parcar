@@ -19,7 +19,7 @@ const Footer = () => {
                                 <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
                                 <p>Don’t miss any updates of our new templates and extensions.!</p>
                                 <p>Phone:+91xxxxx</p>
-                                <p>Email: Parcargementmana@gmail.com</p>
+                                <p>Email: Parcarmanagement@gmail.com</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 text-center">

@@ -125,13 +125,13 @@ const realtimedata=
         floor:[
             {
                 floor_no:"1",
-                section_capacity:'4',
+                section_capacity:'3',
                 section:[
                     {
                         sec_id:"1",
-                        section_total_capacity:"20",
+                        section_total_capacity:"21",
                         occupied_space:'15',
-                        free_space:'5',
+                        free_space:'6',
                     },
                     {
                         sec_id:"2",
@@ -144,13 +144,8 @@ const realtimedata=
                         section_total_capacity:"20",
                         occupied_space:'11',
                         free_space:'9',
-                    },
-                    {
-                        sec_id:"4",
-                        section_total_capacity:"20",
-                        occupied_space:'9',
-                        free_space:'11',
-                    },
+                    }
+                  
                 ]
             },
             {

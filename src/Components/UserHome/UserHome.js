@@ -3,7 +3,7 @@ import { GoogleLogout } from 'react-google-login';
 import Logo from "../../images/logo.png"
 
 function UserHome(props) {
-    console.log(props.data.userGoogleData.profileObj)
+    // console.log(props.data.userGoogleData.profileObj)
     let handleLoggedOut=(response)=>{
         props.handleLoggedOut(response);
         window.location.reload(true);
