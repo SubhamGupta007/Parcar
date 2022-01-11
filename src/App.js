@@ -6,14 +6,31 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+
+//homepage 
 import Header from './Components/Home/Header';
+import Contact from './Components/Home/Contact';
 import Footer from './Components/Home/Footer';
 import Banner from './Components/Home/Banner';
+import Whyus from './Components/Home/Whyus';
+import Services from './Components/Home/Services';
+import Team from './Components/Home/Team';
+
+//registration page
 import Form from './Components/Register/Form';
+
+//bootstrap
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+//User Home page
 import UserHome from './Components/UserHome/UserHome'
 import Bodymain from './Components/UserHome/Bodymain';
+
+//Api data 
 import Data from "../src/Components/data/Data"
+
+
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [userGoogleData, setUserGoogleData] = useState()
@@ -43,6 +60,10 @@ function App() {
               <>  
                 <Header handleLoggedIn={handleLoggedIn}/>
                 <Banner/>
+                <Whyus/>
+                <Services/>
+                <Team/>
+                <Contact/>
                 <Footer/>
               </>}>
 
