@@ -265,7 +265,7 @@ const Form = () => {
               required
             />
           </div>
-          <div className="required-field">
+          {/* <div className="required-field">
             <label htmlFor="camera"></label>
             <input
               placeholder="Have an IP Camera"
@@ -276,9 +276,9 @@ const Form = () => {
               onChange={handleChange}
               required
             />
-          </div>
+          </div> */}
           
-          {/* <div>
+          <div>
             <label htmlFor="camera"></label>
             <select
               style={{
@@ -304,11 +304,11 @@ const Form = () => {
               <option selected value="">
                 Have an IP Camera
               </option>
-              <option value="Y">Yes</option>
-              <option value="N">No</option>
+              <option value="YES">Yes</option>
+              <option value="NO">No</option>
               
             </select>
-          </div> */}
+          </div>
 
           
 
@@ -343,7 +343,7 @@ const Form = () => {
               >
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLongTitle">
-                    Order Processing....
+                    Registration Processing....
                   </h5>
                   <button
                     type="button"
@@ -355,7 +355,7 @@ const Form = () => {
                   </button>
                 </div>
                 <div class="modal-body" style={{ textAlign: "center" }}>
-                  Thank you for your order! We will reach out to you with
+                  Thank you for registering! We will reach out to you with
                   further details very soon!
                 </div>
               </div>
