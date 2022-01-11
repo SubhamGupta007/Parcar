@@ -187,7 +187,7 @@ label {
 }
 
 .container-form {
-  max-width: 600px !important;
+  max-width: 80vw !important;
 }
 
 input {
@@ -230,6 +230,10 @@ input[type="text"] {
   content: "*";
   color:#0077B6 ;
   float: right;
+  
+}
+.required-field{
+  margin: 1vh 3vw!important;
 }
 
 .container-form .btn {
@@ -295,5 +299,49 @@ input[type="text"] {
   margin-right: 50px;
   width: 100%;
 }
-
+.main-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.personal-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2vh 2vw;
+  border: 2px solid #03045E;
+  width: 80vw;
+}
+.personal-info-heading>h2{
+  color: #03045E;
+}
+.personal-info-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.parking-space-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2vh 3vw;
+  border: 2px solid #03045E;
+  margin-top: 2vh;
+  width: 80vw;
+}
+.parking-space-info-heading>h2{
+  color: #03045E;
+}
+.parking-space-info-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
   

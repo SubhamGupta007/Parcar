@@ -17,7 +17,7 @@ export default function Contact() {
             console.log(error.text);
         });
         e.target.reset()
-        toast("Thank you for your order! We will reach out to you with further details soon!", {
+        toast("Thank you for your interest! We will reach out to you with further details soon!", {
             className:"custom-style",
                       progressClassName:"custom-progress",
                       position: "top-center",
@@ -54,13 +54,13 @@ export default function Contact() {
                         <div className="form-group">
                             <input type="text" className="form-control" placeholder="Subject *" name="subject"/>
                         </div>
-                        <div className="form-group">
-                            <input type="submit" name="btnSubmit" className="btnContact" value="Send Message" />
-                        </div>
                     </div>
                     <div className="col-md-6">
                         <div className="form-group">
                             <textarea name="message" className="form-control" placeholder="Your Message *" style={{width:"100%", height:" 150px"}}></textarea>
+                        </div>
+                        <div className="form-group">
+                            <input type="submit" name="btnSubmit" className="btnContact" value="Send Message" />
                         </div>
                     </div>
                 </div>

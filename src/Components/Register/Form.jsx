@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../Css/form.css";
-
+// import emailjs from "emailjs-com";
 const Form = () => {
   const values = {
     name: "",
@@ -50,7 +50,7 @@ const Form = () => {
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-
+    // emailjs.sendForm('service_a4ur2nm','')
     // console.log(initialState);
 
     try {
@@ -107,27 +107,61 @@ const Form = () => {
   return (
     <>
       <h1 className="form">Registration Form</h1>
-      <form className="container-form" onSubmit={handleSubmit}>
-        <div className="container">
-          <div className="required-field">
-            <label htmlFor="name"></label>
+      <form className="container-form" onSubmit={handleSubmit} method="post" action="mail.php">
+        <div className="container main-form">
+          <div className="personal-info">
+            <div className="personal-info-heading">
+              <h2 >Personal Info:</h2>
+            </div>
+            <div className="personal-info-body">
+            <div className="required-field">
+              <label htmlFor="name"></label>
+              <input
+                placeholder="Name"
+                type="text"
+                name="name"
+                autoComplete="off"
+                value={name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="required-field">
+            <label htmlFor="email"></label>
             <input
-              placeholder="Name"
+              placeholder="Email Id"
               type="text"
-              name="name"
+              name="email"
               autoComplete="off"
-              value={name}
+              value={email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="required-field">
+            <label htmlFor="phone"></label>
+            <input
+              placeholder="Phone No."
+              type="text"
+              name="phone"
+              autoComplete="off"
+              value={phone}
               onChange={handleChange}
               required
             />
           </div>
 
-   
-
+            </div>
+          </div>
+        <div className="parking-space-info">
+          <div className="parking-space-info-heading">
+            <h2>Parking Space Info:</h2>
+          </div>
+          <div className="parking-space-info-body">
           <div className="required-field">
             <label htmlFor="address"></label>
             <input
-              placeholder="Address"
+              placeholder="Address of Parking Space"
               type="text"
               name="address"
               autoComplete="off"
@@ -190,32 +224,6 @@ const Form = () => {
           </div>
 
           <div className="required-field">
-            <label htmlFor="email"></label>
-            <input
-              placeholder="Email Id"
-              type="text"
-              name="email"
-              autoComplete="off"
-              value={email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="required-field">
-            <label htmlFor="phone"></label>
-            <input
-              placeholder="Phone No."
-              type="text"
-              name="phone"
-              autoComplete="off"
-              value={phone}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div className="required-field">
             <label htmlFor="areaps"></label>
             <input
               placeholder="Area of parking space"
@@ -242,11 +250,11 @@ const Form = () => {
           </div>
           
           <div className="required-field">
-            <label htmlFor="floors"></label>
+            <label htmlFor="floorscap"></label>
             <input
               placeholder="Number of floors"
               type="text"
-              name="floors"
+              name="floorscap"
               autoComplete="off"
               value={floors}
               onChange={handleChange}
@@ -279,7 +287,7 @@ const Form = () => {
           </div> */}
           
           <div>
-            <label htmlFor="camera"></label>
+            <label htmlFor="ipcamera"></label>
             <select
               style={{
                 backgroundColor: "#fff",
@@ -298,17 +306,21 @@ const Form = () => {
               }}
               className="form-select"
               onChange={handleChange}
-              name="camera"
+              name="ipcamera"
               value={camera}
             >
               <option selected value="">
-                Have an IP Camera
+                Does it have IP Cameras?
               </option>
               <option value="YES">Yes</option>
               <option value="NO">No</option>
               
             </select>
           </div>
+
+          </div>
+        </div>
+          
 
           
 
