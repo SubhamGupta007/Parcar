@@ -1,11 +1,17 @@
-import React from 'react'
+import {React,useState} from 'react'
 import Section from './UserContent/Section'
 import Table from './UserContent/Table';
+import Data from "../data/Data"
 const Bodymain = () => {
+    // console.log(Data);
     const carnow=200;
     const total=400;
     const name="Phoenix Market";
-
+   const id=localStorage.getItem('id');
+    const [Floor, setFloor] = useState(Data.data[id-1].floor[0]);
+    console.log(Data.data[1].floor[0]);
+    console.log(id);
+    // setFloor(Data.data[1].floor[0])
     const floors=4;
 
     return (
@@ -19,37 +25,27 @@ const Bodymain = () => {
                 <div className="col-8 text-center mt-3" >
                     <h3 style={{color:"#03045E"}}>{name}</h3>
                     <div className="row mt-4 text-info" >
-                            <div className="col">
-                                <h5 className='  active'>Floor1</h5>
-                            </div>
-                            <div className="col">
-                                <h5>Floor2</h5>
-                            </div>
-                            <div className="col">
-                                <h5>Floor3</h5>
-                            </div>
-                            <div className="col">
-                                <h5>Floor4</h5>
-                            </div>
+                    {Data.data[0].floor.map((item)=>{
+                       return (
+                        <div className="col">
+                            <button onClick={() => {setFloor(Data.data[id-1].floor[item.floor_no-1])}} className=' btn btn-primary active'>{`Floor ${item.floor_no}`}</button>
+                        </div>
+                       )
+                    }
+                    )}
 
                     </div>
                     <div className="row mt-4">
-                        <div className="col border-end">
-                            
-                            <Table/>
-                        </div>
-                        <div className="col  border-end">
+                    {Floor.section.map((item)=>{
+                        return (
+                            <div className="col border-end">
+                                <h5 style={{color:"#03045E"}}>Section {item.sec_id}</h5>
+                                <Table occupied={item.occupied_space} free={item.free_space}/>
+                            </div>
+                        )
                         
-                            <Table/>
-                        </div>
-                        <div className="col  border-end">
-                       
-                            <Table/>
-                        </div>
-                        <div className="col">
-                       
-                            <Table/>
-                        </div>
+                    })}
+                        
                     </div>
                    
                 </div>

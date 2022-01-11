@@ -34,7 +34,7 @@ import Data from "../src/Components/data/Data"
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [userGoogleData, setUserGoogleData] = useState()
-  console.log(Data);
+  // console.log(Data);
   let handleLoggedIn=(response)=>{
     setUserGoogleData(response);
     setIsUserLoggedIn(true);

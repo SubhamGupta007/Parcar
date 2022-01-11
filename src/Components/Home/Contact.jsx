@@ -10,7 +10,7 @@ export default function Contact() {
         e.preventDefault();
         console.log(e);
 
-    emailjs.sendForm('service_m8oag7f', 'template_7iry8if', e.target, 'user_ROzbC5INGBm2jWOqlP9nq')
+    emailjs.sendForm('service_65n1ur1', 'template_wgorivf', e.target, 'user_6qGvXo8r2UlshhE5tfmZD')
         .then((result) => {
             console.log(result.text);
         }, (error) => {

@@ -11,15 +11,15 @@ const Userdata=[
                     parkingspace_imageUrl:"https://freesvg.org/img/wolf.png",
                     parkingspace_total_capacity:"200",
                     parkingspace_freespace:"111",
-                    parkingspace_occupiedspace:'89',
+                    parkingspace_occupiedspace:"89",
 
                 },
                 {
                     parkingspace_id:'2',
                     pakingspace_name:'D-Block Market',
                     parkingspace_imageUrl:"https://freesvg.org/img/wolf.png",
-                    parkingspace_total_capacity:"200",
-                    parkingspace_freespace:"111",
+                    parkingspace_total_capacity:"100",
+                    parkingspace_freespace:"11",
                     parkingspace_occupiedspace:'89',
 
                 },
@@ -27,3 +27,5 @@ const Userdata=[
 
     }
 ]
+
+export default Userdata;
