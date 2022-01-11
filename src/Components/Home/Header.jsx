@@ -9,18 +9,19 @@ const Header = (props) => {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     const [userGoogleData, setUserGoogleData] = useState();
     const responseGoogle = (response) => {
-        console.log(response);
+        // console.log(response);
       }
     const responseSuccessGoogle=(response)=>{
         setUserGoogleData(response);
         setIsUserLoggedIn(true);
-        console.log(response);
-        console.log('henlo google');
+        // console.log(response);
+        // console.log('henlo google');
         props.handleLoggedIn(response);
     }
 
     return (
         <>
+        
           <nav className="navbar navbar-expand-lg navbar-red navbar-dark">
     <div className="wrapper"> </div>
     <div className="container-fluid all-show"> <NavLink to="/" className="navbar-brand"><img src={Logo} style={{height:"50px",width:"120px"}} alt="logo"/> </NavLink> <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span className="navbar-toggler-icon"></span> </button>
