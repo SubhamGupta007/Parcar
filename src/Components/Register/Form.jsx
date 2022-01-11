@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../Css/form.css";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 const Form = () => {
   const values = {
     name: "",
@@ -48,9 +48,14 @@ const Form = () => {
   };
 
   const handleSubmit = async (e) => {
-
+    console.log('submit hogaya');
     e.preventDefault();
-    // emailjs.sendForm('service_a4ur2nm','')
+     emailjs.sendForm('service_m8oag7f','service_m8oag7f',e.target,'user_ROzbC5INGBm2jWOqlP9nq')
+     .then((result) => {
+      console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
     // console.log(initialState);
 
     try {
@@ -107,7 +112,7 @@ const Form = () => {
   return (
     <>
       <h1 className="form">Registration Form</h1>
-      <form className="container-form" onSubmit={handleSubmit} method="post" action="mail.php">
+      <form className="container-form" onSubmit={handleSubmit}>
         <div className="container main-form">
           <div className="personal-info">
             <div className="personal-info-heading">
@@ -250,11 +255,11 @@ const Form = () => {
           </div>
           
           <div className="required-field">
-            <label htmlFor="floorscap"></label>
+            <label htmlFor="floors"></label>
             <input
               placeholder="Number of floors"
               type="text"
-              name="floorscap"
+              name="floors"
               autoComplete="off"
               value={floors}
               onChange={handleChange}
@@ -314,22 +319,17 @@ const Form = () => {
               </option>
               <option value="YES">Yes</option>
               <option value="NO">No</option>
-              
             </select>
           </div>
-
           </div>
         </div>
-          
+        {/* <!-- Button trigger modal --> */}
 
-          
-
-          
-
-         
-
-          {/* <!-- Button trigger modal --> */}
-          <button
+          {/* <div>
+            <input className="btn" type="submit" value="Register" />
+          </div> */}
+        </div>
+        <button
             className="btn btn-block text-light"
             data-toggle="modal"
             data-target="#exampleModalCenter"
@@ -373,11 +373,6 @@ const Form = () => {
               </div>
             </div>
           </div>
-
-          {/* <div>
-            <input className="btn" type="submit" value="Register" />
-          </div> */}
-        </div>
       </form>
     </>
   );
