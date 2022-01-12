@@ -378,6 +378,7 @@
 
 //////new code /////////
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import "../../Css/form.css";
 import emailjs from "emailjs-com";
 const Form = () => {
@@ -430,58 +431,70 @@ const Form = () => {
     }, (error) => {
         console.log(error.text);
     });
+    e.target.reset()
+        toast("Thank you for your interest! We will reach out to you with further details soon!", {
+            className:"custom-style",
+                      progressClassName:"custom-progress",
+                      position: "top-center",
+                      autoClose: 2000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+            });
     // console.log(initialState);
 
-    try {
-      const response = await fetch(
-        "https://v1.nocodeapi.com/parcar/google_sheets/WkhZBpjGbzbzXoRW?tabId=Sheet1",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify([
-            [
-              name,
-              address,
-              city,
-              state,
-              country,
-              pincode,
-              email,
-              phone,
-              areaps,
-              capacityps,
-              floors,
-              slotspf,
-              camera,
-            ],
-          ]),
-        }
-      );
-      await response.json();
-      setState({
-        ...initialState,
-        name: "",
-        address: "",
-        city: "",
-        state: "",
-        country: "",
-        pincode: "",
-        email: "",
-        phone: "",
-        areaps: "",
-        capacityps: "",
-        slotspf:"",
-        floors: "",
-        camera: "",
-      });
+    // try {
+    //   const response = await fetch(
+    //     "https://v1.nocodeapi.com/parcar/google_sheets/WkhZBpjGbzbzXoRW?tabId=Sheet1",
+    //     {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify([
+    //         [
+    //           name,
+    //           address,
+    //           city,
+    //           state,
+    //           country,
+    //           pincode,
+    //           email,
+    //           phone,
+    //           areaps,
+    //           capacityps,
+    //           floors,
+    //           slotspf,
+    //           camera,
+    //         ],
+    //       ]),
+    //     }
+    //   );
+    //   await response.json();
+    //   setState({
+    //     ...initialState,
+    //     name: "",
+    //     address: "",
+    //     city: "",
+    //     state: "",
+    //     country: "",
+    //     pincode: "",
+    //     email: "",
+    //     phone: "",
+    //     areaps: "",
+    //     capacityps: "",
+    //     slotspf:"",
+    //     floors: "",
+    //     camera: "",
+    //   });
 
-      // alert(
-      //   "Thank you for your order! We will reach out to you with further details soon!"
-      // );
-      console.log(response);
-    } catch (err) {
-      console.log(err);
-    }
+    //   // alert(
+    //   //   "Thank you for your order! We will reach out to you with further details soon!"
+    //   // );
+    //   console.log(response);
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
   return (
     <>
@@ -674,15 +687,14 @@ const Form = () => {
               }}
               className="form-select"
               onChange={handleChange}
-              name="camera"
+              name="ipcamera"
               value={camera}
             >
               <option selected value="">
-                Have an IP Camera
+                Does it have IP Cameras?
               </option>
               <option value="YES">Yes</option>
               <option value="NO">No</option>
-              
             </select>
           </div>
           </div>
@@ -700,7 +712,7 @@ const Form = () => {
           </button>
 
          
-          <div
+          {/* <div
             class="modal fade"
             id="exampleModalCenter"
             tabindex="-1"
@@ -732,8 +744,10 @@ const Form = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
       </form>
+      <ToastContainer/>
+
     </>
   );
 };

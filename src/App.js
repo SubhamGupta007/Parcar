@@ -38,6 +38,7 @@ function App() {
   let handleLoggedIn=(response)=>{
     setUserGoogleData(response);
     setIsUserLoggedIn(true);
+    console.log(userGoogleData);
   }
   let handleLoggedOut=(response)=>{
     console.log(response);

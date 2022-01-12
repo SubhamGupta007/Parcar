@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { useEffect } from 'react'
 import "../../../Css/section.css"
 import sample from "../../../images/sample.jpg"
 import Userdata from '../../data/Userdata'
@@ -8,8 +9,11 @@ const Section = (props) => {
    let cur=props.carnow;
    let total=props.total;
    let name=props.name;
-   const [parking_id, setparking_id] = useState(1)
-   localStorage.setItem('id',parking_id);
+//    const [activeParking_id, setparking_id] = useState(1)
+const [activeParkingId, setActiveParkingId] = useState(1);
+useEffect(() => {
+    props.handleChangeActiveParkingId(activeParkingId);
+}, [activeParkingId])
 
    console.log(localStorage.getItem('id'));
   
@@ -22,7 +26,7 @@ const Section = (props) => {
                 
                 return (
                     
-                   <a onClick={() =>{setparking_id(item.parkingspace_id);localStorage.setItem('id',parking_id); window.location.reload()}}>
+                   <a onClick={() =>{setActiveParkingId(item.parkingspace_id)}}>
                     <div className="alert  mb-3 py-4  rounded-pill"  style={{background:"#023E8A"}} >
             <div className="d-flex "> 
           
