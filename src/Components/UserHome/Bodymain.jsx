@@ -3,11 +3,12 @@ import Section from './UserContent/Section'
 import Table from './UserContent/Table';
 import Data from "../data/Data"
 import { useEffect } from 'react';
+
+
+//passing data to tables and displaying floors
 const Bodymain = () => {
-    // console.log(Data);
-    const carnow=200;
-    const total=400;
-    const name="Phoenix Market";
+ 
+ 
     const [Floor, setFloor] = useState();
     const [activeParkingId, setActiveParkingId] = useState(1);
     const [parkingData, setParkingData] = useState(Data.data[0]);
@@ -17,11 +18,9 @@ const Bodymain = () => {
     useEffect(() => {
         setFloor(Data.data[activeParkingId-1].floor[0]);
     }, [activeParkingId])
-    // useEffect(() => {
-    //     Data
-    // }, [activeParkingId])
+  
     console.log(Data.data[1].floor[0]);
-    // setFloor(Data.data[1].floor[0])
+
     const floors=4;
 
     return (
@@ -29,7 +28,7 @@ const Bodymain = () => {
          <div className="container">
             <div className="row">
                 <div className="col-lg-4  col-md-12 justify-content-left ">
-                    <Section total={{total}} carnow={{carnow}} name={{name}} handleChangeActiveParkingId={handleChangeActiveParkingId}/>
+                    <Section handleChangeActiveParkingId={handleChangeActiveParkingId}/>
                     
                 </div>
                 <div className="col-8 text-center mt-3" >
@@ -37,9 +36,19 @@ const Bodymain = () => {
                     <div className="row mt-4 text-info" >
                     {Data.data[activeParkingId-1].floor.map((item)=>{
                        return (
-                        <div className="col">
-                            <button onClick={() => {setFloor(Data.data[activeParkingId-1].floor[item.floor_no-1])}} className=' btn btn-primary active'>{`Floor ${item.floor_no}`}</button>
-                        </div>
+                           <>
+                           {
+                               ((Data.data[activeParkingId-1].floor[item.floor_no-1])==Floor)? 
+                                <div className="col">
+                                        <button onClick={() => {setFloor(Data.data[activeParkingId-1].floor[item.floor_no-1])}} className=' btn  active' style={{background:"#03045E",color:"#fff"}}>{`Floor ${item.floor_no}`}</button>
+                                </div>
+                                :  
+                                <div className="col">
+                                    <button onClick={() => {setFloor(Data.data[activeParkingId-1].floor[item.floor_no-1])}} className=' btn btn-primary active'>{`Floor ${item.floor_no}`}</button>
+                                </div>
+                           }
+                           </>
+                         
                        )
                     }
                     )}

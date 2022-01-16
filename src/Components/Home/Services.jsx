@@ -7,7 +7,7 @@ import { Fade } from 'react-reveal';
 const Services = () => {
     return (
         <>
-          <div className="container text-center">
+          <div className="container text-center" id="services">
               <h1 className=' fa-bold fw-bold mb-5 mt-5' style={{color:"#03045E"}}>What do we do?</h1>
             <div className="row">
                 <div className="col-lg-5 text-lg-start text-primary" style={{color:"#0077B6"}}>

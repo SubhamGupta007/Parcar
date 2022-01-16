@@ -33,7 +33,7 @@ export default function Contact() {
     }
 
     return(
-        <div className="conatainer">
+        <div className="conatainer" id="contact">
             <div className="contact-form border-info">
             <div className="contact-image">
                 <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>

@@ -24,7 +24,7 @@ const Footer = () => {
                         </div>
                         <div class="col-lg-6 col-md-6 text-center">
                             <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s"  style={{visibility: "visible",animationDelay: "0.8s", animationName: "fadeInLeft"}}>
-                                <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                                <h3 class="f-title f_600 t_color f_size_19">Contact Us</h3>
                                 <div class="f_social_icon">
                                   <AiFillLinkedin size={32} color="blue"/>
                                   <AiFillFacebook size={32} color="blue"/>
