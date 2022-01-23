@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // import car from "../../../images/car.png"
 import empty from "../../../images/empty.png"
-import car from './wolf.png'
+import car from '../../../images/wolf.png'
 const Table = (props) => {
   console.log(props);
   var rows = [], i = 0, len = Math.ceil(props.occupied/2);

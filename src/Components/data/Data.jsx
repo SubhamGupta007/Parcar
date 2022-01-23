@@ -6,7 +6,7 @@ const realtimedata=
         parkingspace_id:"1",
         name:"Subham",
         email:"sg@gmail.com",
-        pakingspace_name:"phoenix market",
+        pakingspace_name:"Phoenix Market",
         parkingscape_total_capacity:"200",
         parkingscape_freespace:"111",
         parkingspace_occupiedspace:'89',
